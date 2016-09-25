@@ -21,6 +21,7 @@ class ProductsController extends Controller
     {
         //list all products
         $products = Product::all();
+        
         return view("products.index", ['products' => $products]);
     }
 
@@ -32,7 +33,9 @@ class ProductsController extends Controller
     public function create()
     {
         //create a product
-        return view("products.create");
+        $product = new Product;
+        
+        return view("products.create", ['product' => $product]);
     }
 
     /**
@@ -45,6 +48,7 @@ class ProductsController extends Controller
     {
         //
         $product = new Product;
+        
         $product->title = $request->title;
         $product->description = $request->description;
         $product->pricing = $request->pricing;
@@ -53,7 +57,7 @@ class ProductsController extends Controller
         if($product->save()){
             return redirect("/products");
         }else{
-            return view("products.create");
+            return view("products.create", ['product' => $product]);
         }
     }
 
@@ -77,6 +81,8 @@ class ProductsController extends Controller
     public function edit($id)
     {
         //
+        $product = Product::find($id);
+        return view("products.edit", ['product' => $product]);
     }
 
     /**
@@ -89,6 +95,17 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $product = Product::find($id);
+        
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->pricing = $request->pricing;
+        
+        if($product->save()){
+            return redirect("/products");
+        }else{
+            return view("products.edit", ['product' => $product]);
+        }
     }
 
     /**
@@ -100,5 +117,8 @@ class ProductsController extends Controller
     public function destroy($id)
     {
         //
+        Product::destroy($id);
+        
+        return redirect("/products");
     }
 }

@@ -31,3 +31,10 @@ nav.navbar.navbar-default.navbar-static-top {
     right: 2em;
     z-index: 100;
 }
+
+input.btn.btn-link.red-text.no-padding.no-margin {
+    color: red;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+}
