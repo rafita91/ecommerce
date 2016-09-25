@@ -17,6 +17,7 @@ class ProductsController extends Controller
      */
     public function index()
     {
+        //list all products
         $products = Product::all();
         return view("products.index", ['products' => $products]);
     }
@@ -28,7 +29,8 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        //create a product
+        return view("products.create");
     }
 
     /**
