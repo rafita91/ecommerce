@@ -35,9 +35,9 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <!-- Branding Image -->
+                <!-- Branding Image (Logo)-->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Productos de arte
                 </a>
             </div>
 
@@ -82,6 +82,13 @@
     @yield('content')
 
     <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
+    <script>
+        $.material.init();
+    </script>
     <script src="/js/app.js"></script>
 </body>
 </html>
