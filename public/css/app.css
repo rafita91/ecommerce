@@ -1,2 +1,16 @@
+nav.navbar.navbar-default.navbar-static-top {
+  margin-bottom: 0px; }
+
+.big-padding {
+  padding: 30px; }
+
+.big-padding.text-center.blue-grey.white-text {
+  background-color: #37474f; }
+
+.white-text {
+  color: #ffffff; }
+
+.table {
+  background-color: white; }
 
 /*# sourceMappingURL=app.css.map */
