@@ -178,8 +178,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         
-        //Externas
+        //Externas & custom
         Collective\Html\HtmlServiceProvider::class,
+        App\Providers\ShoppingCarProvider::class,
     ],
 
     /*
